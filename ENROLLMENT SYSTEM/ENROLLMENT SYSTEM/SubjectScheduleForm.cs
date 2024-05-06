@@ -27,20 +27,22 @@ namespace ENROLLMENT_SYSTEM
             OleDbDataAdapter thisAdapter = new OleDbDataAdapter(Ole, thisConnection);
             OleDbCommandBuilder thisBuilder = new OleDbCommandBuilder(thisAdapter);
             DataSet thisDataSet = new DataSet();
-            thisAdapter.Fill(thisDataSet, "SubjectFile");
+            thisAdapter.Fill(thisDataSet, "SubjectScheduleFile");
 
             DataRow thisRow = thisDataSet.Tables["SubjectFile"].NewRow();
             thisRow["SSFEDPCODE"] = EDPCodeTextBox.Text;
-            thisRow["SFSSUBJDESC"] = DescriptionTextBox.Text;
-            thisRow["SFSSUBJUNITS"] = UnitsTextBox.Text;
-            thisRow["SFSSUBJREGOFRNG"] = OfferingComboBox.Text.Substring(0, 1);
-            thisRow["SFSSUBJCATEGORY"] = CategoryComboBox.Text.Substring(0, 3);
-            thisRow["SFSSUBJSTATUS"] = "AC";
-            thisRow["SFSSUBJCOURSECODE"] = CourseCodeComboBox.Text.Substring(0, 1);
-            thisRow["SFSSUBJCURRCODE"] = CurriculumYearTextBox.Text;
+            thisRow["SSFSUBJCODE"] = SubjectCodeTextBox.Text;
+            thisRow["SSFSTARTTIME"] = StartTimeDateTimePicker.Text;
+            thisRow["SSFENDTIME"] = ExitTimeDateTimePicker.Text;
+            thisRow["SSFDAYS"] = DaysTextBox.Text;
+            thisRow["SSFROOM"] = RoomTextBox.Text;
+            thisRow["SSFXM"] = AMPMComboBox.Text;
+            thisRow["SSFSCHOOLYEAR"] = SchoolYearTextBox.Text;
+            thisRow["SSFSECTION"] = SectionTextBox.Text;
+            
 
-            thisDataSet.Tables["SubjectFile"].Rows.Add(thisRow);
-            thisAdapter.Update(thisDataSet, "SubjectFile");
+            thisDataSet.Tables["SubjectSceduleFile"].Rows.Add(thisRow);
+            thisAdapter.Update(thisDataSet, "SubjectSceduleFile");
 
             MessageBox.Show("Recorded");
         }
@@ -65,7 +67,7 @@ namespace ENROLLMENT_SYSTEM
                 while (thisDataReader.Read())
                 {
                     //MessageBox.Show(thisDataReader["SFSSUBJCODE"].ToString());
-                    if (thisDataReader["SFSSUBJCODE"].ToString().Trim().ToUpper() == SubjectCodeRequisiteTextBox.Text.Trim().ToUpper())
+                    if (thisDataReader["SFSSUBJCODE"].ToString().Trim().ToUpper() == SubjectCodeTextBox.Text.Trim().ToUpper())
                     {
                         found = true;
                         subjectCode = thisDataReader["SFSSUBJCODE"].ToString();
