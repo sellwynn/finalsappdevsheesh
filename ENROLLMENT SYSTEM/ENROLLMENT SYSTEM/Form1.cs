@@ -28,7 +28,7 @@ namespace ENROLLMENT_SYSTEM
             DataSet thisDataSet = new DataSet();
             thisAdapter.Fill(thisDataSet, "SubjectFile");
 
-            DataRow thisRow = thisDataSet.Tables["SubjectFile"].NewRow ();
+            DataRow thisRow = thisDataSet.Tables["SubjectFile"].NewRow();
             thisRow["SFSSUBJCODE"] = SubjectCodeTextBox.Text;
             thisRow["SFSSUBJDESC"] = DescriptionTextBox.Text;
             thisRow["SFSSUBJUNITS"] = UnitsTextBox.Text;
@@ -36,12 +36,20 @@ namespace ENROLLMENT_SYSTEM
             thisRow["SFSSUBJCATEGORY"] = CategoryComboBox.Text.Substring(0, 3);
             thisRow["SFSSUBJSTATUS"] = "AC";
             thisRow["SFSSUBJCOURSECODE"] = CourseCodeComboBox.Text.Substring(0, 1);
-            thisRow["SFSSUBJCURRCODE"] =CurriculumYearTextBox.Text;
+            thisRow["SFSSUBJCURRCODE"] = CurriculumYearTextBox.Text;
 
-            thisDataSet.Tables["SubjectFile"].Rows.Add (thisRow);
+            thisDataSet.Tables["SubjectFile"].Rows.Add(thisRow);
             thisAdapter.Update(thisDataSet, "SubjectFile");
 
-            MessageBox.Show("Recorded");
+            if (PreRequisiteRadioButton.Checked || CoRequisiteRadioButton.Checked && SubjectCodeRequisiteTextBox.Text != string.Empty)
+            {
+                PreCoReq();
+                MessageBox.Show("Recorded");
+            }
+            else
+            {
+                MessageBox.Show("Arjay dig bick energy");
+            }
 
         }
 
@@ -51,7 +59,7 @@ namespace ENROLLMENT_SYSTEM
             {
                 OleDbConnection thisConnection = new OleDbConnection(connectionString);
                 thisConnection.Open();
-                OleDbCommand thisCommand = thisConnection.CreateCommand ();
+                OleDbCommand thisCommand = thisConnection.CreateCommand();
                 string sql = "SELECT * FROM SUBJECTFILE";
                 thisCommand.CommandText = sql;
 
@@ -62,7 +70,8 @@ namespace ENROLLMENT_SYSTEM
                 string description = "";
                 string units = "";
 
-                while (thisDataReader.Read()) 
+
+                while (thisDataReader.Read())
                 {
                     //MessageBox.Show(thisDataReader["SFSSUBJCODE"].ToString());
                     if (thisDataReader["SFSSUBJCODE"].ToString().Trim().ToUpper() == SubjectCodeRequisiteTextBox.Text.Trim().ToUpper())
@@ -70,24 +79,86 @@ namespace ENROLLMENT_SYSTEM
                         found = true;
                         subjectCode = thisDataReader["SFSSUBJCODE"].ToString();
                         description = thisDataReader["SFSSUBJDESC"].ToString();
-                        units = thisDataReader["SFSSUBJUNITS"].ToString ();
+                        units = thisDataReader["SFSSUBJUNITS"].ToString();
+
                         break;
-                    
+
                     }
-                    
-                }if (found == false)
+
+                }
+                if (found == false)
                     MessageBox.Show("Subject Code Not Found");
-                else 
+                else
                 {
                     SubjectDataGridView.Rows[0].Cells[0].Value = subjectCode;
                     SubjectDataGridView.Rows[0].Cells[1].Value = description;
                     SubjectDataGridView.Rows[0].Cells[2].Value = units;
+                    row3reader();
 
                 }
 
             }
         }
+        public void PreCoReq()
+        {
+            OleDbConnection thisConnection = new OleDbConnection(connectionString);
+            string Ole = "Select * From SUBJECTPREQFILE";
+            OleDbDataAdapter thisAdapter = new OleDbDataAdapter(Ole, thisConnection);
+            OleDbCommandBuilder thisBuilder = new OleDbCommandBuilder(thisAdapter);
+            DataSet thisDataSet = new DataSet();
+            thisAdapter.Fill(thisDataSet, "SUBJECTPREQFILE");
+            DataRow thisRow = thisDataSet.Tables["SUBJECTPREQFILE"].NewRow();
+
+            thisRow["SUBJCODE"] = SubjectCodeTextBox.Text;
+            thisRow["SUBJPRECODE"] = SubjectCodeRequisiteTextBox.Text;
+
+            if (PreRequisiteRadioButton.Checked)
+                thisRow["SUBJCATEGORY"] = "PR";
+            else
+                thisRow["SUBJCATEGORY"] = "CR";
 
 
+            thisDataSet.Tables["SUBJECTPREQFILE"].Rows.Add(thisRow);
+            thisAdapter.Update(thisDataSet, "SUBJECTPREQFILE");
+
+        }
+
+        public void row3reader()
+        {
+           
+                OleDbConnection thisConnection = new OleDbConnection(connectionString);
+                thisConnection.Open();
+                OleDbCommand thisCommand = thisConnection.CreateCommand();
+                string sql = "SELECT * FROM SUBJECTPREQFILE";
+                thisCommand.CommandText = sql;
+
+                OleDbDataReader thisDataReader = thisCommand.ExecuteReader();
+
+                bool found = false;
+                string prereq = "";
+               
+
+                while (thisDataReader.Read())
+                {
+                    //MessageBox.Show(thisDataReader["SFSSUBJCODE"].ToString());
+                    if (thisDataReader["SUBJCODE"].ToString().Trim().ToUpper() == SubjectCodeRequisiteTextBox.Text.Trim().ToUpper())
+                    {
+                        found = true;
+                        prereq = thisDataReader["SUBJCATEGORY"].ToString();
+                       
+                        break;
+
+                    }
+
+                }
+                if (found == false)
+                    MessageBox.Show("Subject Code Not Found");
+                else
+                {
+                    SubjectDataGridView.Rows[0].Cells[3].Value = prereq;
+                }
+            
+        }
     }
 }
+
