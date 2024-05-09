@@ -13,7 +13,8 @@ namespace ENROLLMENT_SYSTEM
 {
     public partial class SubjectScheduleForm : Form
     {
-        string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\Server2\second semester 2023-2024\LAB802\79286_CC_APPSDEV22_1030_1230_PM_MW\79286-23222490\Desktop\FINAL\PAMAYBAY.accdb";
+        string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\arjay\Documents\Github\finalsappdevsheesh\PAMAYBAY.accdb";
+        //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\Server2\second semester 2023-2024\LAB802\79286_CC_APPSDEV22_1030_1230_PM_MW\79286-23222490\Desktop\FINAL\PAMAYBAY.accdb";
         public SubjectScheduleForm()
         {
             InitializeComponent();
@@ -23,13 +24,13 @@ namespace ENROLLMENT_SYSTEM
         private void SaveButton_Click(object sender, EventArgs e)
         {
             OleDbConnection thisConnection = new OleDbConnection(connectionString);
-            string Ole = "Select * From SUBJECTFILE";
+            string Ole = "Select * From SUBJECTSCHEDULEFILE";
             OleDbDataAdapter thisAdapter = new OleDbDataAdapter(Ole, thisConnection);
             OleDbCommandBuilder thisBuilder = new OleDbCommandBuilder(thisAdapter);
             DataSet thisDataSet = new DataSet();
             thisAdapter.Fill(thisDataSet, "SubjectScheduleFile");
 
-            DataRow thisRow = thisDataSet.Tables["SubjectFile"].NewRow();
+            DataRow thisRow = thisDataSet.Tables["SubjectScheduleFile"].NewRow();
             thisRow["SSFEDPCODE"] = EDPCodeTextBox.Text;
             thisRow["SSFSUBJCODE"] = SubjectCodeTextBox.Text;
             thisRow["SSFSTARTTIME"] = StartTimeDateTimePicker.Text;
@@ -39,10 +40,11 @@ namespace ENROLLMENT_SYSTEM
             thisRow["SSFXM"] = AMPMComboBox.Text;
             thisRow["SSFSCHOOLYEAR"] = SchoolYearTextBox.Text;
             thisRow["SSFSECTION"] = SectionTextBox.Text;
-            
+            thisRow["SSFMAXSIZE"] = 5;
+            thisRow["SSFCLASSSIZE"] = 0;
 
-            thisDataSet.Tables["SubjectSceduleFile"].Rows.Add(thisRow);
-            thisAdapter.Update(thisDataSet, "SubjectSceduleFile");
+            thisDataSet.Tables["SubjectScheduleFile"].Rows.Add(thisRow);
+            thisAdapter.Update(thisDataSet, "SubjectScheduleFile");
 
             MessageBox.Show("Recorded");
         }
@@ -60,9 +62,6 @@ namespace ENROLLMENT_SYSTEM
                 OleDbDataReader thisDataReader = thisCommand.ExecuteReader();
 
                 bool found = false;
-                string subjectCode = "";
-                string description = "";
-                string units = "";
 
                 while (thisDataReader.Read())
                 {
@@ -70,11 +69,8 @@ namespace ENROLLMENT_SYSTEM
                     if (thisDataReader["SFSSUBJCODE"].ToString().Trim().ToUpper() == SubjectCodeTextBox.Text.Trim().ToUpper())
                     {
                         found = true;
-                        subjectCode = thisDataReader["SFSSUBJCODE"].ToString();
-                        description = thisDataReader["SFSSUBJDESC"].ToString();
-                        units = thisDataReader["SFSSUBJUNITS"].ToString();
+                        DescriptionLabel.Text = thisDataReader["SFSSUBJDESC"].ToString();
                         break;
-
                     }
 
                 }

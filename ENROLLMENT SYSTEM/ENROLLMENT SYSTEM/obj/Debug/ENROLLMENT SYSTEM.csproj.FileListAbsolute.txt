@@ -10,3 +10,14 @@
 \\Server2\second semester 2023-2024\LAB802\79286_CC_APPSDEV22_1030_1230_PM_MW\79286-23222490\Desktop\FINAL\ENROLLMENT SYSTEM\ENROLLMENT SYSTEM\obj\Debug\ENROLLMENT SYSTEM.exe
 \\Server2\second semester 2023-2024\LAB802\79286_CC_APPSDEV22_1030_1230_PM_MW\79286-23222490\Desktop\FINAL\ENROLLMENT SYSTEM\ENROLLMENT SYSTEM\obj\Debug\ENROLLMENT SYSTEM.pdb
 \\Server2\second semester 2023-2024\LAB802\79286_CC_APPSDEV22_1030_1230_PM_MW\79286-23222490\Desktop\FINAL\ENROLLMENT SYSTEM\ENROLLMENT SYSTEM\obj\Debug\ENROLLMENT_SYSTEM.SubjectScheduleForm.resources
+C:\Users\arjay\Documents\Github\finalsappdevsheesh\ENROLLMENT SYSTEM\ENROLLMENT SYSTEM\bin\Debug\ENROLLMENT SYSTEM.exe.config
+C:\Users\arjay\Documents\Github\finalsappdevsheesh\ENROLLMENT SYSTEM\ENROLLMENT SYSTEM\bin\Debug\ENROLLMENT SYSTEM.exe
+C:\Users\arjay\Documents\Github\finalsappdevsheesh\ENROLLMENT SYSTEM\ENROLLMENT SYSTEM\bin\Debug\ENROLLMENT SYSTEM.pdb
+C:\Users\arjay\Documents\Github\finalsappdevsheesh\ENROLLMENT SYSTEM\ENROLLMENT SYSTEM\obj\Debug\ENROLLMENT SYSTEM.csproj.AssemblyReference.cache
+C:\Users\arjay\Documents\Github\finalsappdevsheesh\ENROLLMENT SYSTEM\ENROLLMENT SYSTEM\obj\Debug\ENROLLMENT_SYSTEM.Form1.resources
+C:\Users\arjay\Documents\Github\finalsappdevsheesh\ENROLLMENT SYSTEM\ENROLLMENT SYSTEM\obj\Debug\ENROLLMENT_SYSTEM.Properties.Resources.resources
+C:\Users\arjay\Documents\Github\finalsappdevsheesh\ENROLLMENT SYSTEM\ENROLLMENT SYSTEM\obj\Debug\ENROLLMENT_SYSTEM.SubjectScheduleForm.resources
+C:\Users\arjay\Documents\Github\finalsappdevsheesh\ENROLLMENT SYSTEM\ENROLLMENT SYSTEM\obj\Debug\ENROLLMENT SYSTEM.csproj.GenerateResource.cache
+C:\Users\arjay\Documents\Github\finalsappdevsheesh\ENROLLMENT SYSTEM\ENROLLMENT SYSTEM\obj\Debug\ENROLLMENT SYSTEM.csproj.CoreCompileInputs.cache
+C:\Users\arjay\Documents\Github\finalsappdevsheesh\ENROLLMENT SYSTEM\ENROLLMENT SYSTEM\obj\Debug\ENROLLMENT SYSTEM.exe
+C:\Users\arjay\Documents\Github\finalsappdevsheesh\ENROLLMENT SYSTEM\ENROLLMENT SYSTEM\obj\Debug\ENROLLMENT SYSTEM.pdb

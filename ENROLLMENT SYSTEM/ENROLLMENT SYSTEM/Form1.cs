@@ -13,7 +13,8 @@ namespace ENROLLMENT_SYSTEM
 {
     public partial class Form1 : Form
     {
-        string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\Server2\second semester 2023-2024\LAB802\79286_CC_APPSDEV22_1030_1230_PM_MW\79286-23222490\Desktop\FINAL\PAMAYBAY.accdb";
+        //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\Server2\second semester 2023-2024\LAB802\79286_CC_APPSDEV22_1030_1230_PM_MW\79286-23222490\Desktop\FINAL\PAMAYBAY.accdb";
+        string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\arjay\Documents\Github\finalsappdevsheesh\PAMAYBAY.accdb";
         public Form1()
         {
             InitializeComponent();
@@ -44,13 +45,9 @@ namespace ENROLLMENT_SYSTEM
             if (PreRequisiteRadioButton.Checked || CoRequisiteRadioButton.Checked && SubjectCodeRequisiteTextBox.Text != string.Empty)
             {
                 PreCoReq();
-                MessageBox.Show("Recorded");
-            }
-            else
-            {
-                MessageBox.Show("Arjay dig bick energy");
             }
 
+            MessageBox.Show("Recorded");
         }
 
         private void SubjectCodeRequisiteTextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -135,29 +132,31 @@ namespace ENROLLMENT_SYSTEM
                 OleDbDataReader thisDataReader = thisCommand.ExecuteReader();
 
                 bool found = false;
-                string prereq = "";
-               
 
                 while (thisDataReader.Read())
                 {
-                    //MessageBox.Show(thisDataReader["SFSSUBJCODE"].ToString());
                     if (thisDataReader["SUBJCODE"].ToString().Trim().ToUpper() == SubjectCodeRequisiteTextBox.Text.Trim().ToUpper())
                     {
                         found = true;
-                        prereq = thisDataReader["SUBJCATEGORY"].ToString();
-                       
+                        string prereq = thisDataReader["SUBJPRECODE"].ToString();
+                        SubjectDataGridView.Rows[0].Cells[3].Value = prereq;
                         break;
 
                     }
+                }
+        }
 
-                }
-                if (found == false)
-                    MessageBox.Show("Subject Code Not Found");
-                else
-                {
-                    SubjectDataGridView.Rows[0].Cells[3].Value = prereq;
-                }
-            
+        private void CancelButton_Click(object sender, EventArgs e)
+        {
+            PreRequisiteRadioButton.Checked = false;
+            CoRequisiteRadioButton.Checked = false;
+            SubjectCodeTextBox.Text = "";
+            DescriptionTextBox.Text = "";
+            UnitsTextBox.Text = "";
+            OfferingComboBox.SelectedIndex = -1;
+            CategoryComboBox.SelectedIndex = -1;
+            CourseCodeComboBox.SelectedIndex = -1;
+            CurriculumYearTextBox.Text = "";
         }
     }
 }
