@@ -18,6 +18,7 @@ namespace ENROLLMENT_SYSTEM
         public Form1()
         {
             InitializeComponent();
+            CenterToScreen();
         }
 
         private void SaveButton_Click(object sender, EventArgs e)

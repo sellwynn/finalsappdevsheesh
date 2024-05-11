@@ -21,3 +21,16 @@ C:\Users\arjay\Documents\Github\finalsappdevsheesh\ENROLLMENT SYSTEM\ENROLLMENT 
 C:\Users\arjay\Documents\Github\finalsappdevsheesh\ENROLLMENT SYSTEM\ENROLLMENT SYSTEM\obj\Debug\ENROLLMENT SYSTEM.csproj.CoreCompileInputs.cache
 C:\Users\arjay\Documents\Github\finalsappdevsheesh\ENROLLMENT SYSTEM\ENROLLMENT SYSTEM\obj\Debug\ENROLLMENT SYSTEM.exe
 C:\Users\arjay\Documents\Github\finalsappdevsheesh\ENROLLMENT SYSTEM\ENROLLMENT SYSTEM\obj\Debug\ENROLLMENT SYSTEM.pdb
+C:\Users\Home\OneDrive\Desktop\finalsappdevsheesh-main\ENROLLMENT SYSTEM\ENROLLMENT SYSTEM\bin\Debug\ENROLLMENT SYSTEM.exe.config
+C:\Users\Home\OneDrive\Desktop\finalsappdevsheesh-main\ENROLLMENT SYSTEM\ENROLLMENT SYSTEM\bin\Debug\ENROLLMENT SYSTEM.exe
+C:\Users\Home\OneDrive\Desktop\finalsappdevsheesh-main\ENROLLMENT SYSTEM\ENROLLMENT SYSTEM\bin\Debug\ENROLLMENT SYSTEM.pdb
+C:\Users\Home\OneDrive\Desktop\finalsappdevsheesh-main\ENROLLMENT SYSTEM\ENROLLMENT SYSTEM\obj\Debug\ENROLLMENT SYSTEM.csproj.AssemblyReference.cache
+C:\Users\Home\OneDrive\Desktop\finalsappdevsheesh-main\ENROLLMENT SYSTEM\ENROLLMENT SYSTEM\obj\Debug\ENROLLMENT_SYSTEM.Form1.resources
+C:\Users\Home\OneDrive\Desktop\finalsappdevsheesh-main\ENROLLMENT SYSTEM\ENROLLMENT SYSTEM\obj\Debug\ENROLLMENT_SYSTEM.Menu.resources
+C:\Users\Home\OneDrive\Desktop\finalsappdevsheesh-main\ENROLLMENT SYSTEM\ENROLLMENT SYSTEM\obj\Debug\ENROLLMENT_SYSTEM.Properties.Resources.resources
+C:\Users\Home\OneDrive\Desktop\finalsappdevsheesh-main\ENROLLMENT SYSTEM\ENROLLMENT SYSTEM\obj\Debug\ENROLLMENT_SYSTEM.SubjectScheduleForm.resources
+C:\Users\Home\OneDrive\Desktop\finalsappdevsheesh-main\ENROLLMENT SYSTEM\ENROLLMENT SYSTEM\obj\Debug\ENROLLMENT SYSTEM.csproj.GenerateResource.cache
+C:\Users\Home\OneDrive\Desktop\finalsappdevsheesh-main\ENROLLMENT SYSTEM\ENROLLMENT SYSTEM\obj\Debug\ENROLLMENT SYSTEM.csproj.CoreCompileInputs.cache
+C:\Users\Home\OneDrive\Desktop\finalsappdevsheesh-main\ENROLLMENT SYSTEM\ENROLLMENT SYSTEM\obj\Debug\ENROLLMENT SYSTEM.exe
+C:\Users\Home\OneDrive\Desktop\finalsappdevsheesh-main\ENROLLMENT SYSTEM\ENROLLMENT SYSTEM\obj\Debug\ENROLLMENT SYSTEM.pdb
+C:\Users\Home\OneDrive\Desktop\finalsappdevsheesh-main\ENROLLMENT SYSTEM\ENROLLMENT SYSTEM\obj\Debug\ENROLLMENT_SYSTEM.EnrollmentEntry.resources

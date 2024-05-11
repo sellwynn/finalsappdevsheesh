@@ -18,6 +18,7 @@ namespace ENROLLMENT_SYSTEM
         public SubjectScheduleForm()
         {
             InitializeComponent();
+            CenterToScreen();
         }
 
 
@@ -79,5 +80,7 @@ namespace ENROLLMENT_SYSTEM
 
             }
         }
+
+       
     }
 }
