@@ -123,28 +123,28 @@ namespace ENROLLMENT_SYSTEM
 
         public void row3reader()
         {
-           
-                OleDbConnection thisConnection = new OleDbConnection(connectionString);
-                thisConnection.Open();
-                OleDbCommand thisCommand = thisConnection.CreateCommand();
-                string sql = "SELECT * FROM SUBJECTPREQFILE";
-                thisCommand.CommandText = sql;
 
-                OleDbDataReader thisDataReader = thisCommand.ExecuteReader();
+            OleDbConnection thisConnection = new OleDbConnection(connectionString);
+            thisConnection.Open();
+            OleDbCommand thisCommand = thisConnection.CreateCommand();
+            string sql = "SELECT * FROM SUBJECTPREQFILE";
+            thisCommand.CommandText = sql;
 
-                bool found = false;
+            OleDbDataReader thisDataReader = thisCommand.ExecuteReader();
 
-                while (thisDataReader.Read())
+            bool found = false;
+
+            while (thisDataReader.Read())
+            {
+                if (thisDataReader["SUBJCODE"].ToString().Trim().ToUpper() == SubjectCodeRequisiteTextBox.Text.Trim().ToUpper())
                 {
-                    if (thisDataReader["SUBJCODE"].ToString().Trim().ToUpper() == SubjectCodeRequisiteTextBox.Text.Trim().ToUpper())
-                    {
-                        found = true;
-                        string prereq = thisDataReader["SUBJPRECODE"].ToString();
-                        SubjectDataGridView.Rows[0].Cells[3].Value = prereq;
-                        break;
+                    found = true;
+                    string prereq = thisDataReader["SUBJPRECODE"].ToString();
+                    SubjectDataGridView.Rows[0].Cells[3].Value = prereq;
+                    break;
 
-                    }
                 }
+            }
         }
 
         private void CancelButton_Click(object sender, EventArgs e)

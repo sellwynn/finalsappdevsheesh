@@ -34,3 +34,5 @@ C:\Users\Home\OneDrive\Desktop\finalsappdevsheesh-main\ENROLLMENT SYSTEM\ENROLLM
 C:\Users\Home\OneDrive\Desktop\finalsappdevsheesh-main\ENROLLMENT SYSTEM\ENROLLMENT SYSTEM\obj\Debug\ENROLLMENT SYSTEM.exe
 C:\Users\Home\OneDrive\Desktop\finalsappdevsheesh-main\ENROLLMENT SYSTEM\ENROLLMENT SYSTEM\obj\Debug\ENROLLMENT SYSTEM.pdb
 C:\Users\Home\OneDrive\Desktop\finalsappdevsheesh-main\ENROLLMENT SYSTEM\ENROLLMENT SYSTEM\obj\Debug\ENROLLMENT_SYSTEM.EnrollmentEntry.resources
+C:\Users\arjay\Documents\Github\finalsappdevsheesh\ENROLLMENT SYSTEM\ENROLLMENT SYSTEM\obj\Debug\ENROLLMENT_SYSTEM.EnrollmentEntry.resources
+C:\Users\arjay\Documents\Github\finalsappdevsheesh\ENROLLMENT SYSTEM\ENROLLMENT SYSTEM\obj\Debug\ENROLLMENT_SYSTEM.Menu.resources
