@@ -14,7 +14,8 @@ namespace ENROLLMENT_SYSTEM
     public partial class Form1 : Form
     {
         //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\Server2\second semester 2023-2024\LAB802\79286_CC_APPSDEV22_1030_1230_PM_MW\79286-23222490\Desktop\FINAL\PAMAYBAY.accdb";
-        string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\arjay\Documents\Github\finalsappdevsheesh\PAMAYBAY.accdb";
+        string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source = \\Server2\second semester 2023-2024\LAB802\79286_CC_APPSDEV22_1030_1230_PM_MW\79286-23222490\Desktop\FINAL FINALLY\finalsappdevsheesh-main\PAMAYBAY.accdb";
+       //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\arjay\Documents\Github\finalsappdevsheesh\PAMAYBAY.accdb";
         public Form1()
         {
             InitializeComponent();
@@ -158,6 +159,13 @@ namespace ENROLLMENT_SYSTEM
             CategoryComboBox.SelectedIndex = -1;
             CourseCodeComboBox.SelectedIndex = -1;
             CurriculumYearTextBox.Text = "";
+        }
+
+        private void BackButton_Click(object sender, EventArgs e)
+        {
+            Menu mainMenu = new Menu();
+            mainMenu.Show();
+            this.Hide();
         }
     }
 }

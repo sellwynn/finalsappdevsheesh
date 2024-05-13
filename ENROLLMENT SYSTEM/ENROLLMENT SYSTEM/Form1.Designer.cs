@@ -58,6 +58,7 @@
             this.CoPreDataGridView = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SaveButton = new System.Windows.Forms.Button();
             this.CancelButton = new System.Windows.Forms.Button();
+            this.BackButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.SubjectDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -319,7 +320,7 @@
             // 
             // SaveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(239, 295);
+            this.SaveButton.Location = new System.Drawing.Point(266, 295);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(85, 41);
             this.SaveButton.TabIndex = 24;
@@ -329,7 +330,7 @@
             // 
             // CancelButton
             // 
-            this.CancelButton.Location = new System.Drawing.Point(345, 295);
+            this.CancelButton.Location = new System.Drawing.Point(402, 295);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(85, 41);
             this.CancelButton.TabIndex = 25;
@@ -337,11 +338,22 @@
             this.CancelButton.UseVisualStyleBackColor = true;
             this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
+            // BackButton
+            // 
+            this.BackButton.Location = new System.Drawing.Point(12, 9);
+            this.BackButton.Name = "BackButton";
+            this.BackButton.Size = new System.Drawing.Size(75, 23);
+            this.BackButton.TabIndex = 26;
+            this.BackButton.Text = "MENU";
+            this.BackButton.UseVisualStyleBackColor = true;
+            this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(788, 357);
+            this.Controls.Add(this.BackButton);
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.SubjectDataGridView);
@@ -408,6 +420,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DescriptionDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn UnitsDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn CoPreDataGridView;
+        private System.Windows.Forms.Button BackButton;
     }
 }
 

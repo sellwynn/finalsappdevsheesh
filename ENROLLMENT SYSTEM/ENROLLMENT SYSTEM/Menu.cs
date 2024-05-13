@@ -22,18 +22,21 @@ namespace ENROLLMENT_SYSTEM
         {
             Form1 form1 = new Form1();
             form1.Show();
+            this.Hide();
         }
 
         private void SubjectScheduleEntryButton_Click(object sender, EventArgs e)
         {
             SubjectScheduleForm subjectScheduleForm = new SubjectScheduleForm();
             subjectScheduleForm.Show();
+            this.Hide();
         }
 
         private void EnrollmentEntryButton_Click(object sender, EventArgs e)
         {
             EnrollmentEntry enrollment = new EnrollmentEntry();
             enrollment.Show();
+            this.Hide();
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
@@ -46,5 +49,8 @@ namespace ENROLLMENT_SYSTEM
                 Application.Exit();
             }
         }
+
+        
+
     }
 }

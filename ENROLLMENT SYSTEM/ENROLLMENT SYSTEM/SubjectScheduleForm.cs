@@ -13,15 +13,14 @@ namespace ENROLLMENT_SYSTEM
 {
     public partial class SubjectScheduleForm : Form
     {
-        string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\arjay\Documents\Github\finalsappdevsheesh\PAMAYBAY.accdb";
+        //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\arjay\Documents\Github\finalsappdevsheesh\PAMAYBAY.accdb";
+       string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source = \\Server2\second semester 2023-2024\LAB802\79286_CC_APPSDEV22_1030_1230_PM_MW\79286-23222490\Desktop\FINAL FINALLY\finalsappdevsheesh-main\PAMAYBAY.accdb";
         //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\Server2\second semester 2023-2024\LAB802\79286_CC_APPSDEV22_1030_1230_PM_MW\79286-23222490\Desktop\FINAL\PAMAYBAY.accdb";
         public SubjectScheduleForm()
         {
             InitializeComponent();
             CenterToScreen();
         }
-
-
         private void SaveButton_Click(object sender, EventArgs e)
         {
             OleDbConnection thisConnection = new OleDbConnection(connectionString);
@@ -81,6 +80,25 @@ namespace ENROLLMENT_SYSTEM
             }
         }
 
-       
+        private void CancelButton_Click(object sender, EventArgs e)
+        {
+            EDPCodeTextBox.Text = "";
+            SubjectCodeTextBox.Text = "";
+            DescriptionLabel.Text = "";
+            StartTimeDateTimePicker.Enabled = false;
+            ExitTimeDateTimePicker.Enabled = false;
+            AMPMComboBox.Enabled = false;
+            DaysTextBox.Text = "";
+            SectionTextBox.Text = "";
+            RoomTextBox.Text = "";
+            SchoolYearTextBox.Text = "";
+        }
+
+        private void BackButton_Click(object sender, EventArgs e)
+        {
+            Menu mainMenu = new Menu();
+            mainMenu.Show();
+            this.Hide();
+        }
     }
 }

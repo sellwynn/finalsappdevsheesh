@@ -61,7 +61,7 @@
             this.SubjectScheduleEntryButton.Name = "SubjectScheduleEntryButton";
             this.SubjectScheduleEntryButton.Size = new System.Drawing.Size(177, 45);
             this.SubjectScheduleEntryButton.TabIndex = 2;
-            this.SubjectScheduleEntryButton.Text = "Subject Schedle Entry";
+            this.SubjectScheduleEntryButton.Text = "Subject Schedule Entry";
             this.SubjectScheduleEntryButton.UseVisualStyleBackColor = true;
             this.SubjectScheduleEntryButton.Click += new System.EventHandler(this.SubjectScheduleEntryButton_Click);
             // 
